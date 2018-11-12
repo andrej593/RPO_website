@@ -1,12 +1,11 @@
 <?php
 session_start();
- 
+require "config.php";
 
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+/*if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: members.php");
     exit;
-}
-require "config.php";
+}*/
 
 $username = $password = $db_passowrd = "";
 $usernameErr = $passwordErr = "";
@@ -28,9 +27,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$db_password = $row["password"];
 			}
             if($password==$db_password){
-                $_SESSION["loggedin"] = true;
-                $_SESSION["username"] = $username;
-                header("location: members.php");
+				$confirmed=mysqli_query($povezava, "SELECT confirm FROM users WHERE username='$username'");
+				if(mysqli_num_rows($confirmed)){
+					$row=mysqli_fetch_assoc($confirmed);
+					if($row["confirm"]){
+						$_SESSION["loggedin"] = true;
+						$_SESSION["username"] = $username;
+						header("location: members.php");
+					}
+					else{
+						echo "Verificirajte vaš email naslov.";
+					}
+				}
             } else{
 				$passwordErr = "The password you entered was not valid.";
 			}
@@ -73,6 +81,7 @@ mysqli_close($povezava);
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+			<p>Forgot your password? <a href="pozabljenogeslo.php">Reset password</a>.</p>
         </form>
     </div>    
 </body>

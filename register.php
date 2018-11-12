@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+include "config.php";
 
 $username = $name = $lastname = $password = $password1 = $email = "";
 $usernameErr = $nameErr = $lastnameErr = $passwordErr = $password1Err = $emailErr = "";
@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $usernameErr = "Uporabniško ime že obstaja.";
         }
     }
-    mysqli_stmt_close($stmt);
+
 	//password validation
     $password = $_POST["password"];
 	if(empty($password)){
@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	//lastname validation
 	$lastname=$_POST["lastname"];
 	if(empty($lastname)){
-		$lastnameErr="Prosim vensite vas priimek.";
+		$lastnameErr="Prosim vensite vaš priimek.";
 	}
 	//email validation
 	$email=$_POST["email"];
@@ -61,13 +61,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($usernameErr) && empty($passwordErr) && empty($password1Err) && empty($nameErr) && empty($lastnameErr) && empty($emailErr)){
 		$confirm=0;
 		$confirm_num=rand();
-        $sql = "INSERT INTO users (name, lastname, username, password, email, confirm, confirm_num) VALUES (?, ?, ?, ? , ?, ?, ?)";
+        $sql = "INSERT INTO users (name, lastname, username, password, email, confirm, confirm_num, geslo_token) VALUES (?, ?, ?, ? , ?, ?, ?, ?)";
         $stmt = mysqli_prepare($povezava, $sql);
-        mysqli_stmt_bind_param($stmt, "sssssii", $name, $lastname, $username, $password, $email, $confirm, $confirm_num);
+		$geslo_token=0;
+        mysqli_stmt_bind_param($stmt, "sssssiii", $name, $lastname, $username, $password, $email, $confirm, $confirm_num, $geslo_token);
         mysqli_stmt_execute($stmt);
         
-		$msg = "Vas email lahko potrdite na hyperpovezavi: ";
-		//mail($email, "Verifikacija elektronskega naslova", $msg, "From: me@example.com");
+		require 'PHPMailer/PHPMailerAutoload.php';
+		$mail = new PHPMailer;
+
+		$mail->isSMTP();
+		$mail->Host = 'smtp.gmail.com';
+		$mail->SMTPAuth = true;
+		$mail->Username = 'game.exchange123@gmail.com';
+		$mail->Password = 'geslo1234';
+		$mail->SMTPSecure = 'tls';
+		$mail->Port = 587;
+
+		$mail->setFrom('andtop593@gmail.com', 'Andrej');
+		$mail->addAddress($email, 'User');
+		$mail->isHTML(true);
+		
+		$msg="<h1>GameExchange</h1>Prosim potrdite vaš email naslov preko linka: <br/>
+		<a href='localhost/website/confirmmail.php?username=$username&code=$confirm_num'>localhost/website/confirmmail.php?username=$username&code=$confirm_num</a></br>";
+		$mail->Subject = 'Verifikacija racuna za gameexchange';
+		$mail->Body    = $msg;
+
+		if(!$mail->send()) {
+			echo 'Message could not be sent.';
+			echo 'Mailer Error: ' . $mail->ErrorInfo;
+		} else {
+			echo 'Message has been sent\n';
+		}
+		//gg page
 		echo("Registracija uspešna! Prosim potrdite vaš email naslov.");
         mysqli_stmt_close($stmt);
     }

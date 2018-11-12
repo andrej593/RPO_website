@@ -1,9 +1,8 @@
 <?php
 $server="localhost";
 $username="root";
-$password="Geslo123";
-$name="users";
+$password="password1";
+$name="users";	//$_GET["name"];
 
 $povezava=mysqli_connect($server, $username, $password, $name);
-
 ?>
