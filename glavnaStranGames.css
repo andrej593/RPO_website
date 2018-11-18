@@ -1,0 +1,90 @@
+h3, form {
+	display: inline;
+}
+
+form button {
+	background-image: url("images/lupa.png");
+}
+
+#tabela {
+	display: block;
+	margin: auto;
+	overflow: scroll;
+	width: 80%;
+}
+
+table, td, tr {
+	text-align: left;
+	border-collapse: collapse;
+	border-style: solid;
+	border-width: 2px;
+	font-family: "Arial";
+}
+
+table {
+	width: 80%;
+	margin: auto;
+}
+
+figure {
+	height: 100px;
+	border-style: solid;
+	border-width: 2px;
+}
+
+h4 {
+	border-style: solid;
+	text-align: center;
+}
+
+.oglas {
+	border-style: solid;
+	text-align: top;
+	height: 100%;
+}
+
+.buy {
+	display: block;
+	margin: auto;
+	width: 80%;
+	padding: 10px;
+}
+
+.zavihki {
+	display: block;
+	margin: auto;
+	width: 80%;
+	border-style: solid;
+}
+
+#zavihki {
+	width: 100%;
+}
+
+.glGumbi {
+	width: 100%;
+	text-align: center;
+}
+
+.zavGumb {
+	height: 50px;
+	width: 200px;
+}
+
+#podZavihki {
+	display: table;
+	margin: auto;
+	width: 650px;
+	border-style: solid;
+}
+
+form input {
+	padding: 5px;
+}
+
+#brisi, form button {
+	height: 30px;
+}
+
+
+
