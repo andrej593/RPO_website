@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>New Offer</title>
+		<link rel="icon" href="images/logo-ikona.ico" type="icon" sizes="16x16"/>
+		<!--<link rel="stylesheet" type="text/css" href="placilo.css"/>-->
+		<meta charset="utf-8">
+		<script src="izprazniFiltre3.js"></script>
+		<link rel="stylesheet" type="text/css" href="glavnaStranConsoles.css"></link>
+	</head>
+	<body onload="onloadFunkcija()">
+		<div id="naslovStrani">
+			<!--<img src="images/logo+napis.png" alt="logo in naslov" usemap="#logoInNaslov" id="logo">-->
+			<map name="logoInNaslov">
+				<area shape="rect" coords="0,0,400,251" href="glavnaStranGames.html" alt="glavna stran"><!--ko naredim glavno stran povežem in ko uredim css nastavim area do konca-->
+			</map>
+		</div>
+		<div class="zavihki">
+			<table id="zavihki">
+				<tr>
+					<td class="zavGumb"><button class="btn glGumbi"><h2>Games</h2></button></td>
+					<td class="zavGumb"><button class="btn active glGumbi"><h2>Consoles</h2></button></td>
+					<td class="zavGumb"><button class="btn glGumbi"><h2>Users</h2></button></td>
+					<td class="zavGumb"><button class="btn glGumbi"><h2>My Offers</h2></button></td>
+					<td class="zavGumb"><button class="btn glGumbi"><h2>Profile</h2></button><br></td>
+				</tr>				
+			</table>
+		</div>
+		<div id="meni">
+			<h2>New Offer</h2>
+			<form name="forma">
+				Name of Offer:
+				<input class="in" placeholder="Name ..." required="required" type="text" name="name" id="name"><br>
+				Category:
+				<label><input id="games" type="radio" name="category" value="games" onclick="clickFunkcija()">Games</label>
+				<label><input id="consoles" type="radio" name="category" value="consoles" onclick="clickFunkcija()">Consoles</label><br>
+				<div id="plAndGenre">
+					<div id="platform">
+						Platform:
+						<label><input id="pc" type="radio" name="platform" value="pc">PC</label>
+						<label><input id="ps2" type="radio" name="platform" value="ps2">Playstation 2</label>
+						<label><input id="ps3" type="radio" name="platform" value="ps3">Playstation 3</label>
+						<label><input id="ps4" type="radio" name="platform" value="ps4">Playstation 4</label>
+						<label><input id="xbox360" type="radio" name="platform" value="xbox360">Xbox 360</label>
+						<label><input id="xboxOne" type="radio" name="platform" value="xboxOne">Xbox One</label>
+						<label><input id="nintendo3DS" type="radio" name="platform" value="nintendo3DS">Nintendo 3DS</label>
+						<label><input id="nintendoSwitch" type="radio" name="platform" value="nintendoSwitch">Nintendo Switch</label><br>
+					</div>
+					<div id="genre">
+						Genre:
+						<label><input id="action" type="radio" name="genre" value="action">Action</label>
+						<label><input type="radio" name="genre" value="adven">Adventure</label>
+						<label><input type="radio" name="genre" value="a&a">Action-Adventure</label>
+						<label><input type="radio" name="genre" value="rpg">Role-Playing</label>
+						<label><input type="radio" name="genre" value="sim">Simulation</label>
+						<label><input type="radio" name="genre" value="strateg">Strategy</label>
+						<label><input type="radio" name="genre" value="sports">Sports</label><br>
+					</div>
+				</div>
+				<div id="console">
+					Console:
+					<label><input type="radio" name="console" value="ps2">Playstation 2</label>
+					<label><input type="radio" name="console" value="ps3">Playstation 3</label>
+					<label><input type="radio" name="console" value="ps4">Playstation 4</label>
+					<label><input type="radio" name="console" value="xbox360">Xbox 360</label>
+					<label><input type="radio" name="console" value="xboxOne">Xbox One</label>
+					<label><input type="radio" name="console" value="nintendo3DS">Nintendo 3DS</label>
+					<label><input type="radio" name="console" value="nintendoSwitch">Nintendo Switch</label><br>
+				</div>
+				<script>
+					function clickFunkcija(){
+						var games = document.getElementById("games").checked;
+						var consoles = document.getElementById("consoles").checked;
+						if(games == true){
+							document.getElementById("plAndGenre").style.display = "block";
+							document.getElementById("console").style.display = "none";
+						}					
+						else if(consoles == true){
+							document.getElementById("plAndGenre").style.display = "none";
+							document.getElementById("console").style.display = "block";
+						}
+					}
+					
+					function onloadFunkcija(){
+						document.getElementById("games").checked = true;
+						document.getElementById("pc").checked = true;
+						document.getElementById("action").checked = true;
+						document.getElementById("console").style.display = "none";
+					}
+				</script>
+				Condition:
+				<label><input type="radio" name="condition" value="New">New</label>
+				<label><input type="radio" name="condition" value="Damaged">Damaged</label>
+				<label><input type="radio" name="condition" value="Used">Used</label><br>
+				Here you can write a short Description of your Offer: <br>
+				<textarea rows="4" cols="50" name="description">Description ...</textarea><br>
+				Want to upload a Picture?
+				<input type="file" accept="image/png, image/jpeg"><br>
+
+				<input type="submit" value="Make an Offer"><br>
+			</form>
+		</div>
+	</body>
+</html>

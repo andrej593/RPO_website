@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>User Profile</title>
+		<link rel="icon" href="images/logo-ikona.ico" type="icon" sizes="16x16"/>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="profil.css">
+	</head>
+	<body>
+		<div id="naslovStrani">
+			<img src="images/logo+napis.png" alt="logo in naslov" usemap="#logoInNaslov" style="height: 200px">
+			<map name="logoInNaslov">
+				<area shape="rect" coords="0,0,400,251" href="glavnaStranGames.html" alt="glavna stran"><!--ko naredim glavno stran povežem in ko uredim css nastavim area do konca-->
+			</map>
+		</div>
+		<div class="zavihki">
+			<table id="zavihki">
+				<tr>
+					<td class="zavGumb"><button class="glGumbi"><h2>Games</h2></button></td>
+					<td class="zavGumb"><button class="glGumbi"><h2>Platforms</h2></button></td>
+					<td class="zavGumb"><button class="glGumbi"><h2>Users</h2></button></td>
+					<td class="zavGumb"><button class="glGumbi"><h2>My Offers</h2></button></td>
+					<td class="zavGumb"><button class="glGumbi"><h2>Profile</h2></button><br></td>
+				</tr>				
+			</table>
+		</div>
+		<div id="vsebina">
+			
+			<div id="slikaInOsPodatki">
+				<figure>
+					<img src="images/defProfilePic.jpg" alt="privzeta slika" usemap="#defPic"></img><br>
+					<p id="spremeniSliko">Change your profile picture</p>
+					<input type="file" accept="image/png, image/jpeg">
+				</figure>
+				<div id="trustScore">
+					<p>Trust score</p>
+				</div>
+				<div id="osebniPodatki">
+					<div class="podatki" id="p1">
+						<p>Name: </p><p class="upoPodatki">ime</p>
+						<p>Surname: </p><p class="upoPodatki">priimek</p>
+						<p>Username: </p><p class="upoPodatki">uporabniško ime</p>
+						<p>E-Mail: </p><p class="upoPodatki">email</p>
+						<p>Phone Number: </p><p class="upoPodatki">številka</p>
+					</div>
+					<div class="podatki" id="p2">
+						<p>Street Name and House Number: </p><p class="upoPodatki">ulica in hišna številka</p>
+						<p>Postal Code: </p><p class="upoPodatki">pošta in poštna številka</p>
+						<p>Country: </p><p class="upoPodatki">država</p>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div id="menjavaPodatkov">
+				<div class="podatki2" id="menjavaGesla">
+					<form id="form1">
+						<div class="vGeslo">
+							<label>Old Password:</label><input type="text" placeholder="Old Password ...">
+						</div><br>
+						<div class="vGeslo">
+							<label>New Password:</label><input type="text" placeholder="New Password ...">
+						</div><br>
+						<div class="vGeslo">
+							<label>Re-enter new Password:</label><input type="text" placeholder="New Password ...">
+						</div><br>
+						<div class="vGeslo">
+							<input class="gumbek" type="submit" value="Change">
+						</div><br><br>
+					</form>
+				</div>
+				<div class="podatki2" id="menjavaEmaila">
+					<form>
+						<label>Old E-Mail:</label>
+						<input type="text" name="search" placeholder="Old E-Mail ..."><br>
+						<label>New E-Mail:</label>
+						<input type="text" name="search" placeholder="New E-Mail ..."><br>
+						<label>Re-enter new E-Mail:</label>
+						<input type="text" name="search" placeholder="New E-Mail ..."><br>
+						<input class="gumbek" type="submit" value="Change"><br><br>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
