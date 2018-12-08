@@ -1,8 +1,16 @@
 <?php
-$server="localhost";
-$username="root";
-$password="password1";
-$name="users";	//$_GET["name"];
 
-$povezava=mysqli_connect($server, $username, $password, $name);
+$servername = "localhost";
+$username = "root";
+$password = "Geslo123";
+$name="mydb";	
+
+// Create povezavaection
+$povezava = new mysqli($servername, $username, $password, $name);
+
+// Check povezavaection
+if ($povezava->povezavaect_error) {
+    die("povezava failed: " . $povezava->povezavaect_error);
+} 
+echo "povezava";
 ?>

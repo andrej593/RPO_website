@@ -10,14 +10,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username)){
         $usernameErr = "Prosim vnesite vaše ime.";
     } else{
-        $sql = "SELECT id FROM users WHERE username = ?";
-        $stmt = mysqli_prepare($povezava, $sql);
-        mysqli_stmt_bind_param($stmt, "s", $username);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_store_result($stmt);
-        if(mysqli_stmt_num_rows($stmt) == 1){
-            $usernameErr = "Uporabniško ime že obstaja.";
-        }
+        $sql = "SELECT IDusers FROM users WHERE username = '".$username."';";
+		$result = $povezava->query($sql);
+		if ($result->num_rows > 0) {
+			$usernameErr = "Uporabniško ime že obstaja.";
+		}
     }
 
 	//password validation
@@ -40,6 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $password1Err = "Gesli se ne ujemata.";
         }
     }
+	
 	//name validation
 	$name=$_POST["name"];
 	if(empty($_POST["name"])){
@@ -61,15 +59,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($usernameErr) && empty($passwordErr) && empty($password1Err) && empty($nameErr) && empty($lastnameErr) && empty($emailErr)){
 		$confirm=0;
 		$confirm_num=rand();
-        $sql = "INSERT INTO users (name, lastname, username, password, email, confirm, confirm_num, geslo_token) VALUES (?, ?, ?, ? , ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($povezava, $sql);
 		$geslo_token=0;
-        mysqli_stmt_bind_param($stmt, "sssssiii", $name, $lastname, $username, $password, $email, $confirm, $confirm_num, $geslo_token);
-        mysqli_stmt_execute($stmt);
+        $sql = "INSERT INTO users (name, lastname, username, password, email, confirm, confirmNum, pass_token) 
+		VALUES('".$name."','". $lastname."','".$username."','".$password."','".$email."','".$confirm."','".$confirm_num."','".$geslo_token."');";
+        //echo "</br> --------------------------------";
+		
+		if ($povezava->query($sql) === TRUE) {
+			//echo "New record created successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . $povezava->error;
+		}
         
 		require 'PHPMailer/PHPMailerAutoload.php';
 		$mail = new PHPMailer;
-
 		$mail->isSMTP();
 		$mail->Host = 'smtp.gmail.com';
 		$mail->SMTPAuth = true;
@@ -77,16 +79,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$mail->Password = 'geslo1234';
 		$mail->SMTPSecure = 'tls';
 		$mail->Port = 587;
-
 		$mail->setFrom('andtop593@gmail.com', 'Andrej');
 		$mail->addAddress($email, 'User');
 		$mail->isHTML(true);
-		
 		$msg="<h1>GameExchange</h1>Prosim potrdite vaš email naslov preko linka: <br/>
 		<a href='localhost/website/confirmmail.php?username=$username&code=$confirm_num'>localhost/website/confirmmail.php?username=$username&code=$confirm_num</a></br>";
 		$mail->Subject = 'Verifikacija racuna za gameexchange';
 		$mail->Body    = $msg;
-
 		if(!$mail->send()) {
 			echo 'Message could not be sent.';
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
@@ -95,10 +94,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		}
 		//gg page
 		echo("Registracija uspešna! Prosim potrdite vaš email naslov.");
-        mysqli_stmt_close($stmt);
+        //mysqli_stmt_close($stmt);
     }
     
-    // Close connection
+    // Close povezava
     mysqli_close($povezava);
 }
 ?>

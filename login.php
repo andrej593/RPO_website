@@ -20,29 +20,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $passwordErr = "Please enter your password.";
     }
     if(empty($usernameErr) && empty($passwordErr)){
-        $query1 = "SELECT * FROM users WHERE username = '$username'";
-        $query = mysqli_query($povezava, $query1);
-		if(mysqli_num_rows($query)){
-			while($row=mysqli_fetch_assoc($query)){
+		echo $username."</br>";
+        $sql = "SELECT * FROM users WHERE username = '".$username."';";
+		echo $sql."</br>";
+		$result = $povezava->query($sql);
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
 				$db_password = $row["password"];
-			}
-            if($password==$db_password){
-				$confirmed=mysqli_query($povezava, "SELECT confirm FROM users WHERE username='$username'");
-				if(mysqli_num_rows($confirmed)){
-					$row=mysqli_fetch_assoc($confirmed);
-					if($row["confirm"]){
+				if($password === $db_password){
+					$db_confirmed=$row["confirm"];
+					if($db_confirmed){
+						echo "LOGGEDIN";
 						$_SESSION["loggedin"] = true;
 						$_SESSION["username"] = $username;
 						header("location: members.php");
 					}
 					else{
-						echo "Verificirajte vaš email naslov.";
+						echo "Verify your e-mail.";
 					}
 				}
-            } else{
-				$passwordErr = "The password you entered was not valid.";
+				else{
+					$passwordErr = "The password you entered was not valid.";
+				}
 			}
-        } else{
+		}
+		else{
 			$usernameErr = "No account found with that username.";
         }
     }
