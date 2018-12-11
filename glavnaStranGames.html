@@ -3,14 +3,13 @@
 	<head>
 		<title>Games</title>
 		<link rel="icon" href="images/logo-ikona.ico" type="icon" sizes="16x16"/>
-		<!--<link rel="stylesheet" type="text/css" href="placilo.css"/>-->
 		<meta charset="utf-8">
 		<script src="izprazniFiltre.js"></script>
 		<link rel="stylesheet" type="text/css" href="glavnaStranGames.css"></link>
 	</head>
 	<body>
 		<div id="naslovStrani">
-			<!--<img src="images/logo+napis.png" alt="logo in naslov" usemap="#logoInNaslov" id="logo">-->
+			<img src="images/logo+napis.png" alt="logo in naslov" usemap="#logoInNaslov" id="logo">
 			<map name="logoInNaslov">
 				<area shape="rect" coords="0,0,400,251" href="glavnaStranGames.html" alt="glavna stran"><!--ko naredim glavno stran povežem in ko uredim css nastavim area do konca-->
 			</map>
@@ -18,11 +17,11 @@
 		<div class="zavihki">
 			<table id="zavihki">
 				<tr>
-					<td class="zavGumb"><button class="glGumbi"><h2>Games</h2></button></td>
-					<td class="zavGumb"><button class="glGumbi"><h2>Platforms</h2></button></td>
-					<td class="zavGumb"><button class="glGumbi"><h2>Users</h2></button></td>
-					<td class="zavGumb"><button class="glGumbi"><h2>My Offers</h2></button></td>
-					<td class="zavGumb"><button class="glGumbi"><h2>Profile</h2></button><br></td>
+					<td class="zavGumb"><a href="glavnaStranGames.html"><button class="glGumbi"><h2>Games</h2></button></a></td>
+					<td class="zavGumb"><a href="glavnaStranConsoles.html"><button class="glGumbi"><h2>Consoles</h2></button></a></td>
+					<td class="zavGumb"><a href="glavnaStranUsers.html"><button class="glGumbi"><h2>Users</h2></button></a></td>
+					<td class="zavGumb"><a href="mojePonudbe.html"><button class="glGumbi"><h2>My Offers</h2></button></a></td>
+					<td class="zavGumb"><a href="profil.html"><button class="glGumbi"><h2>Profile</h2></button><br></a></td>
 				</tr>				
 			</table>
 		</div>
@@ -53,7 +52,6 @@
 			<span>
 			<form id="search">
 				<input type="text" name="search" placeholder="Search ...">
-				<!--<input id="lupa" type="image" src="images/lupa.png">-->
 				<button type="submit" form="search">Search</button>
 			</form>
 		</div>

@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>gameExchange - Login</title>
+		<title>Login</title>
 		<link rel="icon" href="images/logo-ikona.ico" type="icon" sizes="16x16"/>
+		<link rel="stylesheet" type="text/css" href="vstopnaStran.css">
 		<meta charset="utf-8">
 	</head>
 	<body>
 		<div id="naslovStrani">
 			<img src="images/logo+napis.png" alt="logo in naslov" usemap="#logoInNaslov">
 			<map name="logoInNaslov">
-				<area shape="poly" href="gStranG.html" alt="glavna stran"><!--ko naredim glavno stran povežem in ko uredim css nastavim area do konca-->
+				<area shape="rect" coords="0,0,400,251" href="glavnaStranGames.html" alt="glavna stran"><!--ko naredim glavno stran povežem in ko uredim css nastavim area do konca-->
 			</map>
 		</div>
 		<div id="obrazec">
 			<h2>Login</h2>
-			<form action="<!--action_page.php-->">
-				Username:
-				<input placeholder="Enter username ..." required="required" type="text" name="username" id="uName"><br>
-				Password:
-				<input placeholder="Enter password ..." required="required" type="password" name="password" id="pWord"><br>
+			<form>
+				<div id="userAndPass">
+					Username:
+					<input placeholder="Enter username ..." required="required" type="text" name="username" id="uName" align="right"><br>
+					Password:
+					<input placeholder="Enter password ..." required="required" type="password" name="password" id="pWord"><br>
+				</div>	
 				<input type="submit" value="Enter"><br>
-				<a href="http://www.google.com">Forgot your password?</a>
+				<a href="pozabljenoGeslo1.html" id="frgPassword">Forgot your password?</a>
 			</form>
 		</div>
 		<div id="registracija">
 			<h2>Not registered yet?</h2>
-			<a href="registracija.html" target=_blank""><input type="button" value="Register"></input></a>
+			<a href="registracija.html" target="_blank"><input type="button" value="Register"></input></a>
 		</div>
 		<div id="gost">
-			<a href="<!--Povezava do glavne strani-->"><h3>Continue as a guest?</h3></a>
-			<p><b>Note:</b> If you choose to continue as a guest, exchanging games is impossible!</p>
+			<a href="<glavnaStranGames.html>"><h3>Continue as a guest?</h3></a>
+			<p><b>Note:</b> If you choose to continue as a guest, exchanging games is <b>impossible!</b></p>
 		</div>
 	</body>
 </html>

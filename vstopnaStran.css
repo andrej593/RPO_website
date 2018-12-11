@@ -1,0 +1,119 @@
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+}
+
+#obrazec h2 {
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 0.1;
+}
+
+#obrazec {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	font-family: Arial;
+	background-color: #eeecec;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 1px;
+	padding-bottom: 10px;
+	border-radius: 5px;
+}
+
+input[type=submit] {
+	display: block;
+	margin: auto;
+	padding: 8px;
+	width: 90px;
+	text-transform: uppercase;
+	background-color: #a8c6fd;
+	border-radius: 3px;
+	border: none;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+input[type=submit]:hover {
+	background-color: #3a73dc;
+}
+
+#userAndPass {
+	display: block;
+	margin: auto;
+	width: 260px;
+	padding: 10px;
+}
+
+#pWord, #uName {
+	margin-bottom: 0px;
+	padding: 10px 13px;
+	border-color: #98808066;
+	box-sizing: border-box;
+	border-style: solid;
+	border-radius: 3px;
+	display: block;
+	direction: ltr;
+	width: 100%;
+}
+
+#frgPassword {
+	display: block;
+	margin: auto;
+	width: 170px;
+	text-decoration: none;
+}
+
+#registracija {
+	display: block;
+	margin: auto;
+	width: 310px;
+	font-family: "Arial", Times, serif;
+	margin-top: 10px;
+}
+
+#registracija h2 {
+	display: inline-block;
+}
+
+#registracija a {
+	text-decoration: none;
+}
+
+#registracija input {
+	height: 35px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: #a8c6fd;
+	border-radius: 3px;
+	border: none;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+#gost {
+	display: block;
+	margin: auto;
+	width: 500px;
+	font-family: "Arial", Times, serif;
+}
+
+#gost a{
+	text-decoration: none;
+	display: inline-block;
+	height: 40px;
+}
+
+#registracija input:hover {
+	background-color: #3a73dc;
+}
+
+a:hover {
+	color: #599e32;
+}
+
+
