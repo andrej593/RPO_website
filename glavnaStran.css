@@ -1,0 +1,250 @@
+h3, #search {
+	display: inline;
+}
+
+table, td, tr {
+	text-align: left;
+	border-collapse: collapse;
+	border-style: solid;
+	border-width: 2px;
+	font-family: "Arial", times, serif;
+}
+
+table {
+	width: 1000px;
+	margin: auto;
+}
+
+.slikeOglasov {
+	height: 200px;
+	border-style: solid;
+	border-width: 2px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+h4 {
+	text-align: center;
+	font-size: 20px;
+	border-collapse: collapse;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.oglas {
+	border-style: solid;
+	width: 300px;
+	text-align: top;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+.buy {
+	display: block;
+	margin: auto;
+	width: 80%;
+	padding: 10px;
+	text-transform: uppercase;
+	border: solid 1px red;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	font-weight: bold;
+	border-radius: 3px;
+}
+
+.zavihki {
+	display: block;
+	margin: auto;
+	width: 80%;
+	margin-bottom: 20px;
+}
+
+.glGumbi {
+	width: 200px;
+	text-align: center;
+}
+
+.zavGumb {
+	height: 50px;
+	width: 150px;
+}
+
+#podZavihkiG {
+	display: table;
+	margin: auto;
+	width: 780px;
+}
+
+form input {
+	padding: 5px;
+}
+
+#brisi, form button {
+	height: 30px;
+}
+
+h3 {
+	width: 30px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+}
+
+#zavihki td {
+	border: none;
+}
+
+.zavihki, #zavihki, #zavihki tr{
+	border: none;
+}
+
+.glGumbi {
+	text-transform: uppercase;
+	background-color: #e00c04;
+	color: white;
+	border: none;
+	font-size: 15px;
+}
+
+.tabela td {
+	padding: 10px;
+}
+
+#podZavihkiC {
+	display: table;
+	margin: auto;
+	width: 670px;
+}
+
+#podZavihkiU {
+	display: table;
+	margin: auto;
+	width: 670px;
+}
+
+#podZavihkiMO {
+	display: table;
+	margin-left: 20px;
+	width: 210px;
+	border: solid 1px;
+}
+
+/*urejanje strani za profil*/
+
+#slikaInOsPodatki {
+	display: block;
+	margin: auto;
+	width: 1000px;
+	overflow: auto;
+	background-color: #eeecec;
+	border-radius: 3px;
+	height: 340px;
+}
+
+#figProfilnaSlika {
+	display: inline-block;
+	float: left;
+	clear: both;
+	position: relative;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+#osebniPodatki {
+	width: 800px;
+	display: inline-block;
+	overflow: auto;
+	position: absolute;
+}
+
+#menjavaGesla {
+	display: block;
+}
+
+#menjavaEmaila {
+	display: block;
+}
+
+#podatki1{
+	width: 300px;
+	float: left;
+	clear: both;
+}
+
+.label {
+	margin-top: 14px;
+	display: inline-block;
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align: left;
+}
+
+.vnosPodatkov {
+	display: inline-block;
+	margin-bottom: 5px;
+	float: left;
+	padding: 8px 10px;
+	border-color: #98808066;
+	box-sizing: border-box;
+	border-style: solid;
+	border-radius: 3px;
+}
+
+#vsebina {
+	text-decoration: none;
+	line-height: 0.8;
+	font-family: "Arial", Times;
+}
+
+#menjavaPodatkov {
+	padding: 10px 13px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 370px;
+	background-color: #eeecec;
+	border-radius: 3px;
+	padding-bottom: 0px;
+}
+
+.upoPodatki {
+	text-indent: 20px;
+}
+
+.gumbek {
+	display: block;
+	margin: auto;
+	padding: 8px;
+	width: 90px;
+	text-transform: uppercase;
+	background-color: #a8c6fd;
+	border-radius: 3px;
+	border: none;
+	font-weight: bold;
+}
+
+.gumbek:hover {
+	background-color: #3a73dc;
+}
+
+#trustScore {
+	border: solid 1px;
+	height: 100px;
+	width: 100px;
+	display: block;
+	margin: auto;
+	display: inline-block;
+	float: left;
+	margin-right: 15px;
+	margin-top: 90px;
+}
+

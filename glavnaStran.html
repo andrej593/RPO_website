@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>game-Exchange</title>
+		<link rel="icon" href="images/logo-ikona.ico" type="icon" sizes="16x16"/>
+		<meta charset="utf-8">
+		<script src="glavnaStran.js"></script>
+		<link rel="stylesheet" type="text/css" href="glavnaStran.css"></link>
+	</head>
+	<body onload="onloadFunkcija()">
+		<div id="naslovStrani">
+			<img src="images/logo+napis.png" alt="logo in naslov" usemap="#logoInNaslov" id="logo">
+			<map name="logoInNaslov">
+				<area shape="rect" coords="0,0,400,251" href="glavnaStran.html" alt="glavna stran"><!--ko naredim glavno stran povežem in ko uredim css nastavim area do konca-->
+			</map>
+		</div>
+		<div class="zavihki">
+			<table id="zavihki">
+				<tr>
+					<td class="zavGumb"><button id="izbranGames" class="glGumbi" onclick="prikaziGames()"><h2>Games</h2></button></td>
+					<td class="zavGumb"><button id="izbranConsoles" class="glGumbi" onclick="prikaziConsoles()"><h2>Consoles</h2></button></td>
+					<td class="zavGumb"><button id="izbranUsers" class="glGumbi" onclick="prikaziUsers()"><h2>Users</h2></button></td>
+					<td class="zavGumb"><button id="izbranMyOffers" class="glGumbi" onclick="prikaziMyOffers()"><h2>My Offers</h2></button></td>
+					<td class="zavGumb"><button id="izbranProfile" class="glGumbi" onclick="prikaziProfile()"><h2>Profile</h2></button><br></td>
+				</tr>				
+			</table>
+		</div>
+		<div id="stranGames">
+			<div id="podZavihkiG">
+				<select class="filter">
+					<option id="1g--" value="--" selected="selected">---</option>
+					<option value="pc">PC</option>
+					<option value="ps4">PlayStation 4</option>
+					<option value="ps3">PlayStation 3</option>
+					<option value="xBox1">Xbox One</option>
+					<option value="xBox360">Xbox 360</option>
+					<option value="nintendo">Nintendo</option>
+					<option value="Wii">Wii</option>
+				</select>
+				<select class="filter">
+					<option id="2g--" value="--" selected="selected">---</option>
+					<option value="ac">Action</option>
+					<option value="ac-ad">Action-Adventure</option>
+					<option value="ad">Adventure</option>
+					<option value="r-p">Role-Playing</option>
+					<option value="sim">Simulation</option>
+					<option value="st">Strategy</option>
+					<option value="sp">Sports</option>
+				</select>
+				<button id="brisi" onclick="brisiFiltre1()">Delete filters</button>
+				<span>
+					<h3>or</h3>
+				<span>
+				<form id="search">
+					<input type="text" name="search" placeholder="Search ...">
+					<button type="submit" form="search">Search</button>
+				</form>
+			</div>
+			<div id="meni">
+				<table class="tabela">
+					<tr>
+						<td>
+							<h4>OGLAS 1</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+								<button class="buy">Buy now!</button>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 2</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+								<button class="buy">Buy now!</button>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 3</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+								<button class="buy">Buy now!</button>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 4</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+								<button class="buy">Buy now!</button>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="stranConsoles">
+			<div id="podZavihkiC">
+				<select class="filter">
+					<option id="1c--" value="--" selected="selected">---</option>
+					<option value="ps4">PlayStation 4</option>
+					<option value="ps3">PlayStation 3</option>
+					<option value="ps2">PlayStation 2</option>
+					<option value="xBox1">Xbox One</option>
+					<option value="xBox360">Xbox 360</option>
+					<option value="nintendo3ds">Nintendo 3DS</option>
+					<option value="nintendoSwitch">Nintendo Switch</option>
+				</select>
+				<button id="brisi" onclick="brisiFiltre2()">Delete filters</button>
+				<span>
+					<h3>or</h3>
+				<span>
+				<form id="search">
+					<input type="text" name="search" placeholder="Search ...">
+					<button type="submit" form="search">Search</button>
+				</form>
+			</div>
+			<div id="meni">
+				<table class="tabela">
+					<tr>
+						<td>
+							<h4>OGLAS 1</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+								<button class="buy">Buy now!</button>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 2</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+								<button class="buy">Buy now!</button>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 3</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+								<button class="buy">Buy now!</button>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 4</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+								<button class="buy">Buy now!</button>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="stranUsers">
+			<div id="podZavihkiU">
+				<select class="filter">
+					<option id="1u--" value="--" selected="selected">---</option>
+					<option value="hScore">Highest Score</option>
+					<option value="lScore">Lowest Score</option>
+					<option value="mSItems">Most Sold Items</option>
+					<option value="lSItems">Least Sold Items</option>
+				</select>
+				<button id="brisi" onclick="brisiFiltre3()">Delete filters</button>
+				<span>
+					<h3>or</h3>
+				<span>
+				<form id="search">
+					<input type="text" name="search" placeholder="Search ...">
+					<button type="submit" form="search">Search</button>
+				</form>
+			</div>
+			<div id="meni">
+				<table class="tabela">
+					<tr>
+						<td>
+							<h4>OSEBA 1</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Trust Score: </p>
+								<p>Sold Items: </p>
+							</div>
+						</td>
+						<td>
+							<h4>OSEBA 2</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Trust Score: </p>
+								<p>Sold Items: </p>
+							</div>
+						</td>
+						<td>
+							<h4>OSEBA 3</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Trust Score: </p>
+								<p>Sold Items: </p>
+							</div>
+						</td>
+						<td>
+							<h4>OSEBA 4</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Trust Score: </p>
+								<p>Sold Items: </p>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="stranMyOffers">
+			<div id="podZavihkiMO">
+				<select class="filter">
+					<option id="1--" value="--" selected="selected">---</option>
+					<option value="newest">Newest</option>
+					<option value="oldest">Oldest</option>
+					<option value="hPrice">Highest Price</option>
+					<option value="lPrice">Lowest Price</option>
+				</select>
+				<button type="button" id="brisi" onclick="brisiFiltre()">Delete filters</button>
+			</div>
+			<a href="offer.html"><button type="button" id="novaPonudba" >New Offer</button></a>
+			<div id="meni">
+				<table class="tabela">
+					<tr>
+						<td>
+							<h4>OGLAS 1</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Opis</p>
+								<div class="dvaGumba">
+									<button>Change Me!</button>
+									<button>Delete Me!</button>
+								</div>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 2</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Opis</p>
+								<div class="dvaGumba">
+									<button>Change Me!</button>
+									<button>Delete Me!</button>
+								</div>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 3</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Opis</p>
+								<div class="dvaGumba">
+									<button>Change Me!</button>
+									<button>Delete Me!</button>
+								</div>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 4</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Opis</p>
+								<div class="dvaGumba">
+									<button>Change Me!</button>
+									<button>Delete Me!</button>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h4>OGLAS 5</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Opis</p>
+								<div class="dvaGumba">
+									<button>Change Me!</button>
+									<button>Delete Me!</button>
+								</div>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 6</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Opis</p>
+								<div class="dvaGumba">
+									<button>Change Me!</button>
+									<button>Delete Me!</button>
+								</div>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 7</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Opis</p>
+								<div class="dvaGumba">
+									<button>Change Me!</button>
+									<button>Delete Me!</button>
+								</div>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 8</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Opis</p>
+								<div class="dvaGumba">
+									<button>Change Me!</button>
+									<button>Delete Me!</button>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="stranProfile">
+			<div id="vsebina">
+				<div id="slikaInOsPodatki">
+					<figure id="figProfilnaSlika">
+						<img src="images/defProfilePic.jpg" alt="privzeta slika" usemap="#defPic"></img><br>
+						<p id="spremeniSliko">Change your profile picture</p>
+						<input type="file" accept="image/png, image/jpeg">
+					</figure>
+					<div id="trustScore">
+						<p>Trust score</p>
+					</div>
+					<div id="osebniPodatki">
+						<div class="podatki" id="podatki1">
+							<p>Name: </p><p class="upoPodatki">ime</p>
+							<p>Surname: </p><p class="upoPodatki">priimek</p>
+							<p>Username: </p><p class="upoPodatki">uporabniško ime</p>
+							<p>E-Mail: </p><p class="upoPodatki">email</p>
+							<p>Phone Number: </p><p class="upoPodatki">številka</p>
+						</div>
+						<div class="podatki" id="podatki2">
+							<p>Street Name and House Number: </p><p class="upoPodatki">ulica in hišna številka</p>
+							<p>Postal Code: </p><p class="upoPodatki">pošta in poštna številka</p>
+							<p>Country: </p><p class="upoPodatki">država</p>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div id="menjavaPodatkov">
+					<div class="podatki2" id="menjavaGesla">
+						<form id="form1">
+							<div class="vGeslo">
+								<label class="label">Old Password:</label><input class="vnosPodatkov" type="text" placeholder="Old Password ...">
+							</div><br>
+							<div class="vGeslo">
+								<label class="label">New Password:</label><input class="vnosPodatkov" type="text" placeholder="New Password ...">
+							</div><br>
+							<div class="vGeslo">
+								<label class="label">Re-enter new Password:</label><input class="vnosPodatkov" type="text" placeholder="New Password ...">
+							</div><br>
+							<div class="vGeslo">
+								<input class="gumbek" type="submit" value="Change">
+							</div><br><br>
+						</form>
+					</div>
+					<div class="podatki2" id="menjavaEmaila">
+						<form>
+							<label class="label">Old E-Mail:</label>
+							<input type="text" name="oEMail" class="vnosPodatkov" placeholder="Old E-Mail ..."><br>
+							<label class="label">New E-Mail:</label>
+							<input type="text" name="nEMail" class="vnosPodatkov" placeholder="New E-Mail ..."><br>
+							<label class="label">Re-enter new E-Mail:</label>
+							<input type="text" name="rNEMail" class="vnosPodatkov" placeholder="New E-Mail ..."><br>
+							<input class="gumbek" type="submit" value="Change"><br><br>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

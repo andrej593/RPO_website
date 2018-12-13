@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>game-Exchange</title>
+		<link rel="icon" href="images/logo-ikona.ico" type="icon" sizes="16x16"/>
+		<meta charset="utf-8">
+		<script src="glavnaStran.js"></script>
+		<link rel="stylesheet" type="text/css" href="glavnaStran.css"></link>
+	</head>
+	<body onload="onloadFunkcija()">
+		<div id="naslovStrani">
+			<img src="images/logo+napis.png" alt="logo in naslov" usemap="#logoInNaslov" id="logo">
+			<map name="logoInNaslov">
+				<area shape="rect" coords="0,0,400,251" href="glavnaStran.html" alt="glavna stran"><!--ko naredim glavno stran povežem in ko uredim css nastavim area do konca-->
+			</map>
+		</div>
+		<div class="zavihki">
+			<table id="zavihki">
+				<tr>
+					<td class="zavGumb"><button class="glGumbi" onclick="prikaziGames()"><h2>Games</h2></button></td>
+					<td class="zavGumb"><button class="glGumbi" onclick="prikaziConsoles()"><h2>Consoles</h2></button></td>
+					<td class="zavGumb"><button class="glGumbi" onclick="prikaziUsers()"><h2>Users</h2></button></td>
+					<td class="zavGumb"><button class="glGumbi" onclick="prikaziMyOffers()"><h2>My Offers</h2></button></td>
+					<td class="zavGumb"><button class="glGumbi" onclick="prikaziProfile()"><h2>Profile</h2></button><br></td>
+				</tr>				
+			</table>
+		</div>
+		<div id="stranGames">
+			<div id="podZavihkiG">
+				<select class="filter">
+					<option id="1g--" value="--" selected="selected">---</option>
+					<option value="pc">PC</option>
+					<option value="ps4">PlayStation 4</option>
+					<option value="ps3">PlayStation 3</option>
+					<option value="xBox1">Xbox One</option>
+					<option value="xBox360">Xbox 360</option>
+					<option value="nintendo">Nintendo</option>
+					<option value="Wii">Wii</option>
+				</select>
+				<select class="filter">
+					<option id="2g--" value="--" selected="selected">---</option>
+					<option value="ac">Action</option>
+					<option value="ac-ad">Action-Adventure</option>
+					<option value="ad">Adventure</option>
+					<option value="r-p">Role-Playing</option>
+					<option value="sim">Simulation</option>
+					<option value="st">Strategy</option>
+					<option value="sp">Sports</option>
+				</select>
+				<button id="brisi" onclick="brisiFiltre1()">Delete filters</button>
+				<span>
+					<h3>or</h3>
+				<span>
+				<form id="search">
+					<input type="text" name="search" placeholder="Search ...">
+					<button type="submit" form="search">Search</button>
+				</form>
+			</div>
+			<div id="meni">
+				<table class="tabela">
+					<tr>
+						<td>
+							<h4>OGLAS 1</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 2</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 3</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 4</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="stranConsoles">
+			<div id="podZavihkiC">
+				<select class="filter">
+					<option id="1c--" value="--" selected="selected">---</option>
+					<option value="ps4">PlayStation 4</option>
+					<option value="ps3">PlayStation 3</option>
+					<option value="ps2">PlayStation 2</option>
+					<option value="xBox1">Xbox One</option>
+					<option value="xBox360">Xbox 360</option>
+					<option value="nintendo3ds">Nintendo 3DS</option>
+					<option value="nintendoSwitch">Nintendo Switch</option>
+				</select>
+				<button id="brisi" onclick="brisiFiltre2()">Delete filters</button>
+				<span>
+					<h3>or</h3>
+				<span>
+				<form id="search">
+					<input type="text" name="search" placeholder="Search ...">
+					<button type="submit" form="search">Search</button>
+				</form>
+			</div>
+			<div id="meni">
+				<table class="tabela">
+					<tr>
+						<td>
+							<h4>OGLAS 1</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 2</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 3</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+							</div>
+						</td>
+						<td>
+							<h4>OGLAS 4</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Krajši opis oglasa</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="stranUsers">
+			<div id="podZavihkiU">
+				<select class="filter">
+					<option id="1u--" value="--" selected="selected">---</option>
+					<option value="hScore">Highest Score</option>
+					<option value="lScore">Lowest Score</option>
+					<option value="mSItems">Most Sold Items</option>
+					<option value="lSItems">Least Sold Items</option>
+				</select>
+				<button id="brisi" onclick="brisiFiltre3()">Delete filters</button>
+				<span>
+					<h3>or</h3>
+				<span>
+				<form id="search">
+					<input type="text" name="search" placeholder="Search ...">
+					<button type="submit" form="search">Search</button>
+				</form>
+			</div>
+			<div id="meni">
+				<table class="tabela">
+					<tr>
+						<td>
+							<h4>OSEBA 1</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Trust Score: </p>
+								<p>Sold Items: </p>
+							</div>
+						</td>
+						<td>
+							<h4>OSEBA 2</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Trust Score: </p>
+								<p>Sold Items: </p>
+							</div>
+						</td>
+						<td>
+							<h4>OSEBA 3</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Trust Score: </p>
+								<p>Sold Items: </p>
+							</div>
+						</td>
+						<td>
+							<h4>OSEBA 4</h4>
+							<div class="oglas">
+								<figure class="slikeOglasov">
+									<img alt="slika">
+								</figure>
+								<p>Trust Score: </p>
+								<p>Sold Items: </p>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="stranMyOffers">
+			<h3>Vsebina ni na voljo!</h3>
+		</div>
+		<div id="stranProfile">
+			<h3>Vsebina ni na voljo!</h3>
+		</div>
+	</body>
+</html>
